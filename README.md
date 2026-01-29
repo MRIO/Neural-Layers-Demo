@@ -5,7 +5,7 @@ This repository contains a single-page, browser-based demo of a **recurrent neur
 Each sheet is a 60×60 grid of simple discrete-time neurons with either:
 
 - **tanh** nonlinearity, or  
-- **sigmoid** nonlinearity mapped to \([-1, 1]\),
+- **sigmoid** nonlinearity mapped to $[-1, 1]$,
 
 and with **local topographic connectivity**, **random recurrent connections**, and **feedforward / feedback coupling** across three layers.
 
@@ -39,8 +39,8 @@ You should see:
 We index neurons as:
 
 - layer \(\ell \in \{0,1,2\}\)
-- coordinates \((x,y)\) with \(x,y \in \{0, \dots, 59\}\)
-- state \(a_{\ell}(x,y,t) \in [-1,1]\) at discrete time step \(t\)
+- coordinates $(x,y)\) with \(x,y \in \{0, \dots, 59\}$
+- state $a_{\ell}(x,y,t) \in [-1,1]$ at discrete time step $t$
 
 Layer 0 is treated as the **input (sensory) layer**; layers 1 and 2 are progressively “deeper”.
 
@@ -50,9 +50,7 @@ Layer 0 is treated as the **input (sensory) layer**; layers 1 and 2 are progress
 
 Each neuron updates according to a leaky nonlinearity:
 
-\[
-a_i(t+1) = (1 - \lambda)\, a_i(t) + \lambda \, \phi(I_i(t)),
-\]
+$$a_i(t+1) = (1 - \lambda)\, a_i(t) + \lambda \, \phi(I_i(t)),$$
 
 where:
 
@@ -60,7 +58,7 @@ where:
 - \(\phi\) is either:
   - **tanh:** \(\phi(x) = \tanh(x)\), or  
   - **sigmoid** mapped to \([-1,1]\):  
-    \(\phi(x) = 2\,\sigma(x)-1 = \frac{2}{1+e^{-x}} - 1\),
+    $\phi(x) = 2\,\sigma(x)-1 = \frac{2}{1+e^{-x}} - 1$,
 - \(I_i(t)\) is the total synaptic + external input to neuron \(i\).
 
 ---
